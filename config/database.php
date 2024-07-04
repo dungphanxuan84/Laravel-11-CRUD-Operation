@@ -91,7 +91,21 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => 'prefer',
+            'sslmode' => 'verify-full', //prefer, require, disable, allow, verify-full
+            //Optional SSL certificate verification.
+            'options' =>  [
+                //SSL Path to Certificate Authority (CA) certificate
+                'sslrootcert' => 'C:/YugaByte/root.crt',
+                //'sslcert' => '/var/certs/mysite.com/postgresql-client.crt',
+                //'sslkey' => '/var/certs/mysite.com/postgresql-client.key',
+            ] ,
+            'sslrootcert' => 'C:/YugaByte/root.crt',
+
+//            'options' => [
+//                'sslrootcert' => '/var/certs/mysite.com/postgresql-root.crt',
+//                'sslcert' => '/var/certs/mysite.com/postgresql-client.crt',
+//                'sslkey' => '/var/certs/mysite.com/postgresql-client.key',
+//            ]
         ],
 
         'sqlsrv' => [
